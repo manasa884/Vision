@@ -1,0 +1,14 @@
+FART: {{.Name}}
+{{ range .SubAlbum}}
+<div class="codrops-top clearfix">
+<div class="albums-tab">
+<a href="{{.PathName}}">
+<div class="albums-tab-thumb sim-anim-7">
+{{range .AlbumImages}}
+<img src="{{.Name}}" class="all studio" />
+{{end}}
+</div>
+<div class="albums-tab-text">{{.Name}}</div>
+</a>
+</div>
+</div>{{end}}
