@@ -11,13 +11,9 @@ import (
 
 //HTML template stuff goes here.
 
+//CreateIndex pulls in the template to the package.
 func CreateIndex(album Album) {
 	box := packr.NewBox("../template")
-	// templateThing := filepath.Join(templatePath, "index.tmpl")
-	// s, err := box.FindString("index.tmpl")
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
 
 	t, err := template.New("index").Parse(box.String("index.tmpl"))
 
@@ -39,11 +35,3 @@ func CreateIndex(album Album) {
 	f.Close()
 
 }
-
-// func DefaultTemple(path string) {
-
-// 	indexFile := filepath.Join(path, "index.tmpl")
-// 	f, _ := os.Create(indexFile)
-// 	f.Write([]byte("FART: {{.Name}}\n{{ range .SubAlbum}}{{$subName := .Name}}\n<div class=\"codrops-top clearfix\">\n<div class=\"albums-tab\">\n<a href=\"./{{.Name}}\">\n<div class=\"albums-tab-thumb sim-anim-7\">\n{{range .AlbumImages}}\n<img src=\"./{{$subName}}/visionimg/thumb_{{.Name}}\" class=\"all studio\" />\n{{end}}\n</div>\n<div class=\"albums-tab-text\">{{.Name}}</div>\n</a>\n</div>\n</div>{{end}}"))
-// 	f.Close()
-// }

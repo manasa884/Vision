@@ -1,5 +1,6 @@
 package cmd
 
+//Album information
 type Album struct {
 	Name        string
 	Path        string
@@ -8,16 +9,19 @@ type Album struct {
 	AlbumImages []AlbumImages
 }
 
+//SubAlbum information
 type SubAlbum struct {
 	Name        string
 	PathName    string
 	AlbumImages []AlbumImages
 }
 
+//AlbumImages name
 type AlbumImages struct {
 	Name string
 }
 
+//Folders information
 type Folders struct {
 	Path       string
 	Name       string
