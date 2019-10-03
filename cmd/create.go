@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	//image libraries.
 	_ "image/gif"
 	_ "image/jpeg"
 	_ "image/png"
@@ -43,8 +44,6 @@ func GetFolders(folder string) []Folders {
 		if theFolders.Name == "visionimg" {
 			shouldBeHidden = "visonimg"
 		}
-		fmt.Println("shouldBeHidden:", shouldBeHidden)
-		fmt.Println("FolderName:", theFolders.Name)
 		if shouldBeHidden != "" {
 			//Remove folders that start with a "." or is called "visionimg"
 			for theFoldersPosition, removeHidden := range allFolders {
@@ -63,11 +62,13 @@ func GetFolders(folder string) []Folders {
 	return tmpFolders
 }
 
+//RootAlbum gets the root path for albums to generate.
 func RootAlbum(name string) Album {
 	rootAlbum := Album{Name: name}
 	return rootAlbum
 }
 
+//GenAlbums finds the images and folders.
 func GenAlbums(startPath string, folders []Folders) []Album {
 
 	var allAlbums []Album
@@ -141,6 +142,7 @@ func ReadDir(dirname string) ([]os.FileInfo, error) {
 	return list, nil
 }
 
+//GenImages will crate the thumbnails and smaller sized images.
 func GenImages(imagePath string, width int) error {
 	//Verify the img directory exists.
 	directoryPath := filepath.Dir(imagePath)

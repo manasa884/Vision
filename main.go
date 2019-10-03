@@ -43,7 +43,6 @@ func main() {
 			fmt.Printf("Album: %s\nNumber of images: %d\n", album.Name, len(album.AlbumImages))
 			fmt.Println("Album Path:", album.Path)
 			if len(album.SubAlbum) > 0 {
-				fmt.Println("Has a sub album")
 				for _, subalbum := range album.SubAlbum {
 					fmt.Println("Sub album name:", subalbum.Name)
 				}
