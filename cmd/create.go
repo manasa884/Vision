@@ -107,9 +107,14 @@ func GenAlbums(startPath string, folders []Folders) []Album {
 				// pick random images from subalbumDetails, then add those to newSubalbum images
 				var randomSubImage []AlbumImages
 				rand.Seed(time.Now().UnixNano())
-				randomize := rand.Perm(len(subalbumDetails.AlbumImages))
-				for _, v := range randomize[:4] {
-					randomSubImage = append(randomSubImage, subalbumDetails.AlbumImages[v])
+				if len(subalbumDetails.AlbumImages) >= 4 {
+
+					randomize := rand.Perm(len(subalbumDetails.AlbumImages))
+					for _, v := range randomize[:4] {
+						randomSubImage = append(randomSubImage, subalbumDetails.AlbumImages[v])
+					}
+				} else {
+					randomSubImage = append(randomSubImage, subalbumDetails.AlbumImages[0])
 				}
 
 				newSubalbum.AlbumImages = randomSubImage

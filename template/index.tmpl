@@ -148,12 +148,12 @@
 	{{ $length := len .SubAlbum }} {{ if gt $length 0 }}
     	<hr width="90%" size="5">
 	{{ end }}
-	
-	<div class="polaroid-images">
-		{{range .AlbumImages}}
-						<img src="./visionimg/resize_{{.Name}}" class="all studio" />
-		{{end}}
-	</div>
+
+	{{range .AlbumImages}}
+		<div class="polaroid-images">
+			<a href=./{{.Name}}><img src="./visionimg/resize_{{.Name}}" /></a>
+		</div>
+	{{end}}
 
 </body>
 </html>
