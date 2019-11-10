@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"html/template"
+	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -33,5 +34,15 @@ func CreateIndex(album Album) {
 		return
 	}
 	f.Close()
-
+	cssFile := []byte(box.String("styles.css"))
+	if err != nil {
+		log.Print(err)
+		return
+	}
+	cssFilePath := filepath.Join(album.Path, "visionimg/styles.css")
+	err = ioutil.WriteFile(cssFilePath, cssFile, 0777)
+	if err != nil {
+		log.Print(err)
+		return
+	}
 }
