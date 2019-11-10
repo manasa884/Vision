@@ -16,27 +16,25 @@
         </ul>
     </header>   
 
-    <div class="albums">
-    <div class="albums-inner">
-
-    {{ range .SubAlbum}}{{$subName := .Name}}
-        <div class="albums-tab">
-            <a href="./{{.Name}}/index.html">
-            <div class="albums-tab-thumb sim-anim-7">
-                {{range .AlbumImages}}
-                    <img src="./{{$subName}}/visionimg/thumb_{{.Name}}" class="all studio" />
-                {{end}}
-            </div>
-            <div class="albums-tab-text">
-                {{.Name}}
-            </div>
-            </a>
-        </div>
-    {{end}}
-    </div>
-    </div>
-
 	{{ $length := len .SubAlbum }} {{ if gt $length 0 }}
+		<div class="albums">
+			<div class="albums-inner">
+				{{ range .SubAlbum}}{{$subName := .Name}}
+					<div class="albums-tab">
+						<a href="./{{.Name}}/index.html">
+						<div class="albums-tab-thumb sim-anim-7">
+							{{range .AlbumImages}}
+								<img src="./{{$subName}}/visionimg/thumb_{{.Name}}" class="all studio" />
+							{{end}}
+						</div>
+						<div class="albums-tab-text">
+							{{.Name}}
+						</div>
+						</a>
+					</div>
+				{{end}}
+			</div>
+		</div>
     	<hr width="90%" size="5">
 	{{ end }}
 
