@@ -5,6 +5,7 @@
     <link href="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_css/Icomoon/style.css" rel="stylesheet" type="text/css" />
     <link href="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_css/main.css" rel="stylesheet" type="text/css"/>
     <link href="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_css/sim-prev-anim.css" rel="stylesheet" type="text/css" />
+    <link href="https://gitcdn.link/repo/LordBrain/Vision/master/template/styles.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_scripts/jquery-2.0.2.min.js"></script>
 </head>
 <body>
@@ -114,16 +115,11 @@
         position:relative;
 }
 </style>
-
-   
-    <div id="header">
-    {{if .ParentAlbum}}
-        <div id="header-left">
-            <div id="header-left-icon"><a href="../index.html"><span class="icon-caret-left"></span><span class="iconb" data-icon="&#xe0a0;"></span></a></div>
-            <div id="header-left-text"><a href="../index.html">{{ .ParentAlbum }}</a></div>
-        </div>
-    {{end}}
-    </div>
+    <header class="appbar">
+	<h1 class="logo"><a href="#">Vision</a></h1>
+	<ul class="nav-items">
+        </ul>
+    </header>   
 
     <div class="albums">
     <div class="albums-inner">
