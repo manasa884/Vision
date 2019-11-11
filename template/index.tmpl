@@ -8,6 +8,7 @@
     <link href="./visionimg/styles.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_scripts/jquery-2.0.2.min.js"></script>
 </head>
+
 <body>
 
     <header class="appbar">
@@ -38,11 +39,13 @@
     	<hr width="90%" size="5">
 	{{ end }}
 
-	{{range .AlbumImages}}
-		<div class="polaroid-images">
-			<a href=./{{.Name}}><img src="./visionimg/resize_{{.Name}}" /></a>
-		</div>
-	{{end}}
+	<section id="photos" >
+		{{range .AlbumImages}}
+				<a href=./{{.Name}}><img class="img" src="./visionimg/resize_{{.Name}}"/></a>
+		{{end}}
+	</section>
+
 
 </body>
+
 </html>
