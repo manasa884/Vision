@@ -5,17 +5,17 @@
 <link href="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_css/Icomoon/style.css" rel="stylesheet" type="text/css" />
     <link href="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_css/main.css" rel="stylesheet" type="text/css"/>
     <link href="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_css/sim-prev-anim.css" rel="stylesheet" type="text/css" />
-    <link href="./visionimg/styles.css" rel="stylesheet" type="text/css">
+    <link href="./visionimg/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="./visionimg/shards.min.css" rel="stylesheet" type="text/css">
+		<link href="./visionimg/styles.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_scripts/jquery-2.0.2.min.js"></script>
 </head>
 
 <body>
 
-    <header class="appbar">
-	<h1 class="logo"><a href="#">Vision</a></h1>
-	<ul class="nav-items">
-        </ul>
-    </header>   
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+	  <h1 class="nav-brand">Vision</h1>
+	</nav> 
 
 	{{ $length := len .SubAlbum }} {{ if gt $length 0 }}
 		<div class="albums">
@@ -36,7 +36,6 @@
 				{{end}}
 			</div>
 		</div>
-    	<hr width="90%" size="5">
 	{{ end }}
 
 	<section id="photos" >
