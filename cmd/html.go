@@ -34,15 +34,26 @@ func CreateIndex(album Album) {
 		return
 	}
 	f.Close()
-	cssFile := []byte(box.String("styles.css"))
+
+	// Read files in styles directory
+	stylesheets, err := ioutil.ReadDir("./template/styles")
 	if err != nil {
-		log.Print(err)
-		return
+		log.Fatal(err)
 	}
-	cssFilePath := filepath.Join(album.Path, "visionimg/styles.css")
-	err = ioutil.WriteFile(cssFilePath, cssFile, 0777)
-	if err != nil {
-		log.Print(err)
-		return
+
+	// Loop through files and add them to the visionimg folder
+	for _, file := range stylesheets {
+
+		stylesheet := []byte(box.String("styles/" + file.Name()))
+		if err != nil {
+			log.Print(err)
+			return
+		}
+		stylesheetFilePath := filepath.Join(album.Path, "visionimg/"+file.Name())
+		err = ioutil.WriteFile(stylesheetFilePath, stylesheet, 0777)
+		if err != nil {
+			log.Print(err)
+			return
+		}
 	}
 }
