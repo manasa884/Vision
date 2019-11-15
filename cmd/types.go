@@ -14,6 +14,7 @@ type SubAlbum struct {
 	Name        string
 	PathName    string
 	AlbumImages []AlbumImages
+	ImageCount  int
 }
 
 //AlbumImages name
