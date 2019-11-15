@@ -2,13 +2,9 @@
 
 <html>
 <head>
-<link href="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_css/Icomoon/style.css" rel="stylesheet" type="text/css" />
-    <link href="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_css/main.css" rel="stylesheet" type="text/css"/>
-    <link href="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_css/sim-prev-anim.css" rel="stylesheet" type="text/css" />
     <link href="./visionimg/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<link href="./visionimg/shards.min.css" rel="stylesheet" type="text/css">
 		<link href="./visionimg/styles.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="http://simbyone.com/demo/9-album-preview-animations-using-css-only/_scripts/jquery-2.0.2.min.js"></script>
 </head>
 
 <body>
@@ -17,26 +13,22 @@
 	  <h1 class="nav-brand">Vision</h1>
 	</nav> 
 
+
 	{{ $length := len .SubAlbum }} {{ if gt $length 0 }}
-		<div class="albums">
-			<div class="albums-inner">
-				{{ range .SubAlbum}}{{$subName := .Name}}
-					<div class="albums-tab">
-						<a href="./{{.Name}}/index.html">
-						<div class="albums-tab-thumb sim-anim-7">
-							{{range .AlbumImages}}
-								<img src="./{{$subName}}/visionimg/thumb_{{.Name}}" class="all studio" />
-							{{end}}
-						</div>
-						<div class="albums-tab-text">
-							{{.Name}}
-						</div>
-						</a>
+		<section id="subAlbum" >
+			{{ range .SubAlbum}}{{$subName := .Name}}
+				<div class="card" style="width:400px">
+					<img class="card-img-top" src="./{{$subName}}/visionimg/thumb_{{(index .AlbumImages 0).Name}}" alt="Card image">
+					<div class="card-body">
+						<h4 class="card-title">{{.Name}}</h4>
+						<p class="card-text">{{.ImageCount}} Photos</p>
+						<a href="./{{.Name}}/index.html" class="stretched-link"></a>
 					</div>
-				{{end}}
-			</div>
-		</div>
-	{{ end }}
+				</div>
+			{{end}}
+		</section>
+	{{end}}
+
 
 	<section id="photos" >
 		{{range .AlbumImages}}
