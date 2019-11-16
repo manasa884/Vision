@@ -118,6 +118,7 @@ func GenAlbums(startPath string, folders []Folders) []Album {
 				}
 
 				newSubalbum.AlbumImages = randomSubImage
+				newSubalbum.ImageCount = len(subalbumDetails.AlbumImages)
 				for albumNumber, addSub := range allAlbums {
 					if addSub.Name == albumDetails.Name {
 						allAlbums[albumNumber].SubAlbum = append(allAlbums[albumNumber].SubAlbum, newSubalbum)
